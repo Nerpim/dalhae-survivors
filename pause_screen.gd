@@ -2,11 +2,13 @@ extends Control
 
 @onready var resume_button: Button = $ResumeButton
 @onready var restart_button: Button = $RestartButton
+@onready var main_menu_button: Button = $MainMenuButton
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	resume_button.pressed.connect(_on_resume_pressed)
 	restart_button.pressed.connect(_on_restart_pressed)
+	main_menu_button.pressed.connect(_on_main_menu_pressed)
 	hide()
 
 func show_pause() -> void:
@@ -26,3 +28,7 @@ func _on_resume_pressed() -> void:
 func _on_restart_pressed() -> void:
 	get_tree().paused = false
 	get_tree().reload_current_scene()
+
+func _on_main_menu_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://title_screen.tscn")

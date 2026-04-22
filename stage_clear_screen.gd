@@ -1,11 +1,13 @@
 extends Control
 
 @onready var retry_button: Button = $RetryButton
+@onready var main_menu_button: Button = $MainMenuButton
 @onready var stats_label: Label = $StatsLabel
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	retry_button.pressed.connect(_on_retry_pressed)
+	main_menu_button.pressed.connect(_on_main_menu_pressed)
 	hide()
 
 func show_clear_screen() -> void:
@@ -30,3 +32,7 @@ func format_time(seconds: float) -> String:
 func _on_retry_pressed() -> void:
 	get_tree().paused = false
 	get_tree().reload_current_scene()
+
+func _on_main_menu_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://title_screen.tscn")
