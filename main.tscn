@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bk8le7vn4fi3i" path="res://game_over_screen.tscn" id="9_074og"]
 [ext_resource type="Script" uid="uid://08ojwob8pwlv" path="res://ninja_spawner.gd" id="9_kek77"]
 [ext_resource type="PackedScene" uid="uid://bwstddhahwjdw" path="res://ninja_squad.tscn" id="10_4c57u"]
+[ext_resource type="PackedScene" uid="uid://be4kdgblt2o5g" path="res://pause_screen.tscn" id="10_074og"]
 [ext_resource type="PackedScene" uid="uid://b36lp27h6shpc" path="res://warrior_kkomak.tscn" id="10_dg77c"]
 [ext_resource type="PackedScene" uid="uid://bpr4s3f6cq4jc" path="res://fat_kkomak.tscn" id="11_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://ccr6vp411nfv" path="res://boss_kkomak.tscn" id="13_vivmo"]
@@ -30,6 +31,9 @@ script = ExtResource("2_0xm2m")
 autostart = true
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1740125502]
+
+[node name="PauseScreen" parent="HUD" unique_id=787220022 groups=["pause_screen"] instance=ExtResource("10_074og")]
+process_mode = 2
 
 [node name="HPBar" type="ProgressBar" parent="HUD" unique_id=1279349296]
 offset_left = 20.0

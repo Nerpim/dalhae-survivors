@@ -78,6 +78,12 @@ func _physics_process(delta: float) -> void:
 	
 	check_enemy_collision()
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		var pause_screen = get_tree().get_first_node_in_group("pause_screen")
+		if pause_screen and not pause_screen.visible:
+			pause_screen.show_pause()
+
 func check_enemy_collision() -> void:
 	if is_invincible:
 		return
@@ -132,7 +138,7 @@ func level_up_now() -> void:
 	
 	flash_level_up()
 	level_up.emit(level)
-	GameManager.on_player_level_up(level)  # 추가
+	GameManager.on_player_level_up(level)
 	print("레벨 업! Lv.", level)
 	
 	# 레벨업 선택지 띄우기
@@ -209,7 +215,7 @@ func _on_weapon_selected(weapon_id: String) -> void:
 
 func die() -> void:
 	died.emit()
-	GameManager.on_player_died()  # 추가
+	GameManager.on_player_died()
 	print("Game Over!")
 	
 	# 게임오버 화면 표시
