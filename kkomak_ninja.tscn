@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b3uxparu82has"]
+
+[ext_resource type="Script" uid="uid://bd3r4v7253jn3" path="res://kkomak_ninja.gd" id="1_lky2g"]
+[ext_resource type="PackedScene" uid="uid://djokqsnre0px5" path="res://exp_orb.tscn" id="2_gvptu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r47a8"]
+size = Vector2(24, 24)
+
+[node name="KkomakNinja" type="CharacterBody2D" unique_id=2138113480 groups=["enemies"]]
+script = ExtResource("1_lky2g")
+exp_orb_scene = ExtResource("2_gvptu")
+
+[node name="Body" type="ColorRect" parent="." unique_id=518854163]
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 12.0
+offset_bottom = 12.0
+color = Color(0.21568628, 0.2784314, 0.30980393, 1)
+
+[node name="Headband" type="ColorRect" parent="." unique_id=1482583768]
+offset_left = -12.0
+offset_top = -10.0
+offset_right = 12.0
+offset_bottom = -5.0
+color = Color(0.8980392, 0.22352941, 0.20784314, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1045207010]
+shape = SubResource("RectangleShape2D_r47a8")

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dk2g0di4a2ql6"]
+
+[ext_resource type="Script" uid="uid://b353odioxchrd" path="res://haedori.gd" id="1_2xone"]
+[ext_resource type="PackedScene" uid="uid://gi38a8sojv8y" path="res://bubble.tscn" id="2_rv1in"]
+
+[node name="Haedori" type="Node2D" unique_id=1566929357]
+script = ExtResource("1_2xone")
+bubble_scene = ExtResource("2_rv1in")
+
+[node name="Visual" type="ColorRect" parent="." unique_id=643532494]
+offset_left = -8.0
+offset_top = -10.0
+offset_right = 8.0
+offset_bottom = 10.0
+color = Color(1, 0.972549, 0.88235295, 1)
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=2039606424]
+wait_time = 1.2
+autostart = true

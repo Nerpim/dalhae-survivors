@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://24j0aa1fsylp"]
+
+[ext_resource type="Script" uid="uid://d4bxlplf6fj3m" path="res://shield_kkomak.gd" id="1_35hh6"]
+[ext_resource type="PackedScene" uid="uid://djokqsnre0px5" path="res://exp_orb.tscn" id="2_vb8hk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_panmm"]
+size = Vector2(28, 28)
+
+[node name="ShieldKkomak" type="CharacterBody2D" unique_id=2144961240 groups=["enemies"]]
+script = ExtResource("1_35hh6")
+exp_orb_scene = ExtResource("2_vb8hk")
+
+[node name="AuraGlow" type="ColorRect" parent="." unique_id=1583111444]
+offset_left = -22.0
+offset_top = -22.0
+offset_right = 22.0
+offset_bottom = 22.0
+color = Color(0, 0, 0, 0)
+
+[node name="Body" type="ColorRect" parent="." unique_id=1291167067]
+offset_left = -14.0
+offset_top = -14.0
+offset_right = 14.0
+offset_bottom = 14.0
+color = Color(0.42745098, 0.29803923, 0.25490198, 1)
+
+[node name="Shield" type="ColorRect" parent="." unique_id=1076264489]
+offset_left = -14.0
+offset_top = -14.0
+offset_right = 14.0
+color = Color(0.32941177, 0.43137255, 0.47843137, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=449210636]
+shape = SubResource("RectangleShape2D_panmm")
+
+[node name="HPBar" type="ProgressBar" parent="." unique_id=329191320]
+offset_left = -15.0
+offset_top = -22.0
+offset_right = 15.0
+offset_bottom = -18.0
+max_value = 60.0
+value = 60.0
+show_percentage = false

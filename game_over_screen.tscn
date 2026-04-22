@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bk8le7vn4fi3i"]
+
+[ext_resource type="Script" uid="uid://dpu5eoixrcg00" path="res://game_over_screen.gd" id="1_gt22q"]
+
+[node name="GameOverScreen" type="Control" unique_id=1128817946]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gt22q")
+
+[node name="DimBackground" type="ColorRect" parent="." unique_id=1787335133]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.4, 0, 0, 0.78431374)
+
+[node name="Title" type="Label" parent="." unique_id=1811341989]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_right = 300.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.8980392, 0.22352941, 0.20784314, 1)
+theme_override_font_sizes/font_size = 72
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="RetryButton" type="Button" parent="." unique_id=538762200]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -30.0
+offset_right = 150.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "다시 도전"

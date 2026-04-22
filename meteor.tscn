@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bb3kfxkl46j74"]
+
+[ext_resource type="Script" uid="uid://bu3b40loxn44x" path="res://meteor.gd" id="1_n51xl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ndumj"]
+radius = 30.0
+
+[node name="Meteor" type="Node2D" unique_id=1182223100]
+script = ExtResource("1_n51xl")
+
+[node name="Warning" type="ColorRect" parent="." unique_id=141521011]
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+color = Color(1, 0, 0, 0.47058824)
+
+[node name="MeteorBody" type="ColorRect" parent="." unique_id=682488195]
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+color = Color(0.3529412, 0.41960785, 0.5411765, 1)
+
+[node name="ExplosionArea" type="Area2D" parent="." unique_id=1048932990]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionArea" unique_id=261525731]
+shape = SubResource("CircleShape2D_ndumj")

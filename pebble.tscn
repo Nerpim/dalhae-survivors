@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cv30cow15oli2"]
+
+[ext_resource type="Script" uid="uid://dmhhfb8f4gje7" path="res://pebble.gd" id="1_omnlw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3scms"]
+size = Vector2(12, 12)
+
+[node name="Pebble" type="Area2D" unique_id=998337171]
+script = ExtResource("1_omnlw")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=658148849]
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 6.0
+offset_bottom = 6.0
+color = Color(0.65882355, 0.78431374, 0.9098039, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1192833343]
+shape = SubResource("RectangleShape2D_3scms")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

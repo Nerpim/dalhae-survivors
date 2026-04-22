@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://coqsluxah0ejv"]
+
+[ext_resource type="Script" uid="uid://bjcdkee0rj1af" path="res://bouncing_pebble.gd" id="1_hqefx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ijhx7"]
+radius = 7.0
+
+[node name="BouncingPebble" type="Area2D" unique_id=1807234563]
+script = ExtResource("1_hqefx")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=939421933]
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+color = Color(1, 0.7176471, 0.3019608, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=877667664]
+shape = SubResource("CircleShape2D_ijhx7")

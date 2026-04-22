@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://c62ap6o2psim2"]
+
+[ext_resource type="Script" uid="uid://cnk6ka15uxqka" path="res://level_up_screen.gd" id="1_i5ge7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qhkoo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i5ge7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kbaih"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tc0h1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xvlhx"]
+
+[node name="LevelUpScreen" type="Control" unique_id=1123859890]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i5ge7")
+
+[node name="DimBackground" type="ColorRect" parent="." unique_id=1458499722]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7058824)
+
+[node name="Title" type="Label" parent="." unique_id=1359763938]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -44.5
+offset_right = 200.0
+offset_bottom = 44.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "레벨 업!"
+horizontal_alignment = 1
+
+[node name="CardContainer" type="HBoxContainer" parent="." unique_id=879518410]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Card" type="PanelContainer" parent="CardContainer" unique_id=995450508]
+custom_minimum_size = Vector2(280, 300)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CardContainer/Card" unique_id=372273889]
+layout_mode = 2
+
+[node name="WeaponName" type="Label" parent="CardContainer/Card/VBoxContainer" unique_id=2126351674]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "공전 조약돌"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="CardContainer/Card/VBoxContainer" unique_id=1526676963]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "달해 주위를 빙글빙글 도는 조약돌"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="CardContainer/Card" unique_id=287270068]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qhkoo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i5ge7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kbaih")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tc0h1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xvlhx")
+
+[node name="Card2" type="PanelContainer" parent="CardContainer" unique_id=2046241516]
+custom_minimum_size = Vector2(280, 300)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CardContainer/Card2" unique_id=1046947546]
+layout_mode = 2
+
+[node name="WeaponName" type="Label" parent="CardContainer/Card2/VBoxContainer" unique_id=859206622]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "메테오 조약돌"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="CardContainer/Card2/VBoxContainer" unique_id=154714098]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "하늘에서 조약돌이 떨어짐"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="CardContainer/Card2" unique_id=414441307]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qhkoo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i5ge7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kbaih")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tc0h1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xvlhx")
+
+[node name="Card3" type="PanelContainer" parent="CardContainer" unique_id=951307527]
+custom_minimum_size = Vector2(280, 300)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CardContainer/Card3" unique_id=1289570387]
+layout_mode = 2
+
+[node name="WeaponName" type="Label" parent="CardContainer/Card3/VBoxContainer" unique_id=2061109701]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "튕기는 조약돌"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="CardContainer/Card3/VBoxContainer" unique_id=1140421268]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "적을 맞고 다른 적으로 튕김"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="CardContainer/Card3" unique_id=1067323576]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qhkoo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i5ge7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kbaih")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tc0h1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xvlhx")

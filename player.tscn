@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://durhryo61thy"]
+
+[ext_resource type="Script" uid="uid://kjm2hq0komcl" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://blhnsd24em2dc" path="res://pebble_weapon.gd" id="2_onrkg"]
+[ext_resource type="PackedScene" uid="uid://cv30cow15oli2" path="res://pebble.tscn" id="3_i3pqv"]
+[ext_resource type="Script" uid="uid://f2qjtitmvjg5" path="res://orbiting_pebble_weapon.gd" id="4_hqtel"]
+[ext_resource type="PackedScene" uid="uid://qvd84oeypcnk" path="res://orbiting_pebble.tscn" id="5_sweqy"]
+[ext_resource type="Script" uid="uid://duxhci4x1gt86" path="res://meteor_weapon.gd" id="6_2hs0m"]
+[ext_resource type="PackedScene" uid="uid://bb3kfxkl46j74" path="res://meteor.tscn" id="7_1jxqw"]
+[ext_resource type="Script" uid="uid://dx0743hk265ae" path="res://bouncing_pebble_weapon.gd" id="8_dw050"]
+[ext_resource type="PackedScene" uid="uid://coqsluxah0ejv" path="res://bouncing_pebble.tscn" id="9_b26j0"]
+[ext_resource type="Script" uid="uid://dv84cutlbhuyb" path="res://haedori_summon_weapon.gd" id="10_n7ghd"]
+[ext_resource type="PackedScene" uid="uid://dk2g0di4a2ql6" path="res://haedori.tscn" id="11_nvl01"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
+size = Vector2(32, 32)
+
+[node name="Player" type="CharacterBody2D" unique_id=2032835174 groups=["player"]]
+script = ExtResource("1_4flbx")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1276246116]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+color = Color(1, 0.56078434, 0.72156864, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=766886946]
+shape = SubResource("RectangleShape2D_sh265")
+
+[node name="PebbleWeapon" type="Node2D" parent="." unique_id=770834942]
+script = ExtResource("2_onrkg")
+pebble_scene = ExtResource("3_i3pqv")
+
+[node name="Timer" type="Timer" parent="PebbleWeapon" unique_id=1292018301]
+wait_time = 0.8
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=75094290]
+zoom = Vector2(1.5, 1.5)
+
+[node name="OrbitingPebbleWeapon" type="Node2D" parent="." unique_id=957866907]
+script = ExtResource("4_hqtel")
+pebble_scene = ExtResource("5_sweqy")
+starting_pebble_count = 0
+
+[node name="MeteorWeapon" type="Node2D" parent="." unique_id=436613488]
+script = ExtResource("6_2hs0m")
+meteor_scene = ExtResource("7_1jxqw")
+
+[node name="Timer" type="Timer" parent="MeteorWeapon" unique_id=727774589]
+wait_time = 2.5
+
+[node name="BouncingPebbleWeapon" type="Node2D" parent="." unique_id=1814131817]
+script = ExtResource("8_dw050")
+bouncing_pebble_scene = ExtResource("9_b26j0")
+
+[node name="Timer" type="Timer" parent="BouncingPebbleWeapon" unique_id=1322323200]
+wait_time = 1.5
+
+[node name="HaedoriSummonWeapon" type="Node2D" parent="." unique_id=1610254789]
+script = ExtResource("10_n7ghd")
+haedori_scene = ExtResource("11_nvl01")

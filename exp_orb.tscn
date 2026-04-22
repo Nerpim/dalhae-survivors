@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://djokqsnre0px5"]
+
+[ext_resource type="Script" uid="uid://2xtxwpi4l6l1" path="res://exp_orb.gd" id="1_k3o3q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mtkpl"]
+radius = 6.0
+
+[node name="ExpOrb" type="Area2D" unique_id=1544943127]
+script = ExtResource("1_k3o3q")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1300788490]
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+color = Color(0.30980393, 0.7647059, 0.96862745, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=829860910]
+shape = SubResource("CircleShape2D_mtkpl")

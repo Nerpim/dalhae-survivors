@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://dfoqtm66ct22l"]
+
+[ext_resource type="PackedScene" uid="uid://durhryo61thy" path="res://player.tscn" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://dhisn7s6f1wcn" path="res://enemy_spawner.gd" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://24j0aa1fsylp" path="res://shield_kkomak.tscn" id="3_5vw27"]
+[ext_resource type="PackedScene" uid="uid://cvjga43ug2oh4" path="res://kkomak.tscn" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://47rfexf52f07" path="res://hp_bar.gd" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://ddho72petd5tj" path="res://exp_bar.gd" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://c62ap6o2psim2" path="res://level_up_screen.tscn" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://bl8i4uttr7axw" path="res://timer_label.gd" id="7_5vw27"]
+[ext_resource type="Script" uid="uid://dktcvuh3uob7n" path="res://stage_manager.gd" id="7_272bh"]
+[ext_resource type="Script" uid="uid://frcqo3r30ekk" path="res://boss_hp_bar.gd" id="7_w48qg"]
+[ext_resource type="PackedScene" uid="uid://dsb6v82472clb" path="res://stage_clear_screen.tscn" id="8_yaehf"]
+[ext_resource type="PackedScene" uid="uid://bk8le7vn4fi3i" path="res://game_over_screen.tscn" id="9_074og"]
+[ext_resource type="Script" uid="uid://08ojwob8pwlv" path="res://ninja_spawner.gd" id="9_kek77"]
+[ext_resource type="PackedScene" uid="uid://bwstddhahwjdw" path="res://ninja_squad.tscn" id="10_4c57u"]
+[ext_resource type="PackedScene" uid="uid://b36lp27h6shpc" path="res://warrior_kkomak.tscn" id="10_dg77c"]
+[ext_resource type="PackedScene" uid="uid://bpr4s3f6cq4jc" path="res://fat_kkomak.tscn" id="11_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://ccr6vp411nfv" path="res://boss_kkomak.tscn" id="13_vivmo"]
+
+[node name="Main" type="Node2D" unique_id=534228537]
+
+[node name="Player" parent="." unique_id=2032835174 instance=ExtResource("1_ig7tw")]
+position = Vector2(576, 324)
+
+[node name="EnemySpawner" type="Node" parent="." unique_id=736205273 groups=["enemy_spawner"]]
+script = ExtResource("2_0xm2m")
+
+[node name="Timer" type="Timer" parent="EnemySpawner" unique_id=1930209442]
+autostart = true
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1740125502]
+
+[node name="HPBar" type="ProgressBar" parent="HUD" unique_id=1279349296]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 270.0
+offset_bottom = 50.0
+value = 100.0
+script = ExtResource("4_1bvp3")
+
+[node name="ExpBar" type="ProgressBar" parent="HUD" unique_id=909916234]
+offset_left = 20.0
+offset_top = 60.0
+offset_right = 270.0
+offset_bottom = 87.0
+max_value = 5.0
+show_percentage = false
+script = ExtResource("5_lquwl")
+
+[node name="LevelUpScreen" parent="HUD" unique_id=1123859890 groups=["level_up_screen"] instance=ExtResource("6_7mycd")]
+
+[node name="TimerLabel" type="Label" parent="HUD" unique_id=1769818554]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -21.0
+offset_right = 21.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 48
+text = "15:00"
+horizontal_alignment = 1
+script = ExtResource("7_5vw27")
+
+[node name="BossHPBar" type="ProgressBar" parent="HUD" unique_id=245759739]
+visible = false
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 100.0
+offset_top = 120.0
+offset_right = -100.0
+offset_bottom = 147.0
+grow_horizontal = 2
+max_value = 1500.0
+value = 1500.0
+show_percentage = false
+script = ExtResource("7_w48qg")
+
+[node name="StageClearScreen" parent="HUD" unique_id=1025829223 groups=["stage_clear_screen"] instance=ExtResource("8_yaehf")]
+
+[node name="GameOverScreen" parent="HUD" unique_id=1128817946 groups=["game_over_screen"] instance=ExtResource("9_074og")]
+
+[node name="StageManager" type="Node" parent="." unique_id=704009201 groups=["stage_manager"]]
+script = ExtResource("7_272bh")
+kkomak_scene = ExtResource("3_h2yge")
+shield_kkomak_scene = ExtResource("3_5vw27")
+warrior_kkomak_scene = ExtResource("10_dg77c")
+fat_kkomak_scene = ExtResource("11_ycdy4")
+boss_scene = ExtResource("13_vivmo")
+
+[node name="NinjaSpawner" type="Node" parent="." unique_id=39432041 groups=["ninja_spawner"]]
+script = ExtResource("9_kek77")
+squad_scene = ExtResource("10_4c57u")
+
+[node name="Timer" type="Timer" parent="NinjaSpawner" unique_id=1759662863]
+wait_time = 5.0

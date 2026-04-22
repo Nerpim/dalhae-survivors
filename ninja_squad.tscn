@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bwstddhahwjdw"]
+
+[ext_resource type="Script" uid="uid://b8c21nea6f2le" path="res://ninja_squad.gd" id="1_yydub"]
+[ext_resource type="PackedScene" uid="uid://b3uxparu82has" path="res://kkomak_ninja.tscn" id="2_1ue1g"]
+
+[node name="NinjaSquad" type="Node2D" unique_id=1357082191]
+script = ExtResource("1_yydub")
+ninja_scene = ExtResource("2_1ue1g")

@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://ccr6vp411nfv"]
+
+[ext_resource type="Script" uid="uid://bp8olahi4bo67" path="res://boss_kkomak.gd" id="1_06cby"]
+[ext_resource type="PackedScene" uid="uid://djokqsnre0px5" path="res://exp_orb.tscn" id="2_u1pcf"]
+[ext_resource type="PackedScene" uid="uid://cvjga43ug2oh4" path="res://kkomak.tscn" id="3_fq3c3"]
+[ext_resource type="PackedScene" uid="uid://24j0aa1fsylp" path="res://shield_kkomak.tscn" id="4_4qdau"]
+[ext_resource type="PackedScene" uid="uid://b36lp27h6shpc" path="res://warrior_kkomak.tscn" id="5_ybb02"]
+[ext_resource type="PackedScene" uid="uid://bpr4s3f6cq4jc" path="res://fat_kkomak.tscn" id="6_3637s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ccn2i"]
+size = Vector2(100, 100)
+
+[node name="BossKkomak" type="CharacterBody2D" unique_id=1437122474 groups=["boss", "enemies"]]
+script = ExtResource("1_06cby")
+exp_orb_scene = ExtResource("2_u1pcf")
+kkomak_scene = ExtResource("3_fq3c3")
+shield_kkomak_scene = ExtResource("4_4qdau")
+warrior_kkomak_scene = ExtResource("5_ybb02")
+fat_kkomak_scene = ExtResource("6_3637s")
+
+[node name="Body" type="ColorRect" parent="." unique_id=1235393045]
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+color = Color(0.41960785, 0.1764706, 0.101960786, 1)
+
+[node name="Crown" type="ColorRect" parent="." unique_id=1824182830]
+offset_left = -40.0
+offset_top = -55.0
+offset_right = 40.0
+offset_bottom = -35.0
+color = Color(1, 0.84313726, 0, 1)
+
+[node name="Jewel" type="ColorRect" parent="." unique_id=1016903458]
+offset_left = -8.0
+offset_top = -55.0
+offset_right = 8.0
+offset_bottom = -39.0
+color = Color(0.9137255, 0.11764706, 0.3882353, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=681831122]
+shape = SubResource("RectangleShape2D_ccn2i")

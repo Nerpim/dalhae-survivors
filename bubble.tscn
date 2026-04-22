@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://gi38a8sojv8y"]
+
+[ext_resource type="Script" uid="uid://i1l0wcjnrkba" path="res://bubble.gd" id="1_n2mqj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rj10t"]
+radius = 4.0
+
+[node name="Bubble" type="Area2D" unique_id=1359039968]
+script = ExtResource("1_n2mqj")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=414567683]
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+color = Color(0.7019608, 0.8980392, 0.9882353, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=825026224]
+shape = SubResource("CircleShape2D_rj10t")

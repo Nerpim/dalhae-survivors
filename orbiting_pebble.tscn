@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://qvd84oeypcnk"]
+
+[ext_resource type="Script" uid="uid://cxpxbb8woaimn" path="res://orbiting_pebble.gd" id="1_2skhb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wasjl"]
+radius = 7.0
+
+[node name="OrbitingPebble" type="Area2D" unique_id=2061907930]
+script = ExtResource("1_2skhb")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1156395582]
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+color = Color(0.65882355, 0.9019608, 0.8117647, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=578859098]
+shape = SubResource("CircleShape2D_wasjl")

@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dsb6v82472clb"]
+
+[ext_resource type="Script" uid="uid://t4jcpy1k57t5" path="res://stage_clear_screen.gd" id="1_14udb"]
+
+[node name="StageClearScreen" type="Control" unique_id=1025829223]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_14udb")
+
+[node name="DimBackground" type="ColorRect" parent="." unique_id=45297665]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.78431374)
+
+[node name="Title" type="Label" parent="." unique_id=185026193]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_right = 300.0
+offset_bottom = 101.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.84313726, 0, 1)
+theme_override_font_sizes/font_size = 72
+text = "스테이지 클리어!"
+horizontal_alignment = 1
+
+[node name="RetryButton" type="Button" parent="." unique_id=1542674605]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.00003
+offset_top = -30.0
+offset_right = 150.00003
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "다시 도전"

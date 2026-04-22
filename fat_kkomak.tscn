@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bpr4s3f6cq4jc"]
+
+[ext_resource type="Script" uid="uid://ca62luvb4u8ys" path="res://fat_kkomak.gd" id="1_q7n55"]
+[ext_resource type="PackedScene" uid="uid://djokqsnre0px5" path="res://exp_orb.tscn" id="2_i8pvu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjoik"]
+size = Vector2(48, 48)
+
+[node name="FatKkomak" type="CharacterBody2D" unique_id=808381120 groups=["enemies"]]
+script = ExtResource("1_q7n55")
+exp_orb_scene = ExtResource("2_i8pvu")
+
+[node name="AuraGlow" type="ColorRect" parent="." unique_id=1284066319]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+color = Color(0, 0, 0, 0)
+
+[node name="Body" type="ColorRect" parent="." unique_id=916804547]
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+color = Color(0.41960785, 0.20392157, 0.0627451, 1)
+
+[node name="Belly" type="ColorRect" parent="." unique_id=434690920]
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(0.6509804, 0.44313726, 0.26666668, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1221056895]
+shape = SubResource("RectangleShape2D_mjoik")
+
+[node name="HPBar" type="ProgressBar" parent="." unique_id=1065409204]
+offset_left = -25.0
+offset_top = -32.0
+offset_right = 25.0
+offset_bottom = -27.0
+max_value = 150.0
+value = 150.0
+show_percentage = false
