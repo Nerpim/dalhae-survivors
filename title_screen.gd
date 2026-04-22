@@ -6,6 +6,7 @@ extends Control
 func _ready() -> void:
 	start_button.pressed.connect(_on_start_pressed)
 	quit_button.pressed.connect(_on_quit_pressed)
+	BgmManager.play_main()
 
 func _on_start_pressed() -> void:
 	# 메인 게임 씬으로 전환

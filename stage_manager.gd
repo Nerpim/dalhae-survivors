@@ -34,6 +34,7 @@ var enemy_spawner: Node = null
 var ninja_spawner: Node = null
 
 func _ready() -> void:
+	BgmManager.play_game()
 	GameManager.start_new_run()
 	
 	time_remaining = stage_duration

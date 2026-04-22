@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*uid://dyvbw086nth28"
+BgmManager="*uid://py2kddorl5sk"
 
 [display]
 
