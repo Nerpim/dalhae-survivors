@@ -1,6 +1,6 @@
 extends Node
 
-@export var stage_duration: float = 30.0
+@export var stage_duration: float = 1800.0
 @export var boss_warning_time: float = 5.0
 
 @export var kkomak_scene: PackedScene
