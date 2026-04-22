@@ -42,6 +42,7 @@ func _physics_process(delta: float) -> void:
 func take_damage(amount: int) -> void:
 	current_hp -= amount
 	if current_hp <= 0:
+		GameManager.on_enemy_killed("kkomak_ninja")
 		drop_exp()
 		queue_free()
 

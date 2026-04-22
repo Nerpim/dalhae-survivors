@@ -141,6 +141,9 @@ func summon_minions() -> void:
 		minion.global_position = global_position + offset
 
 func die() -> void:
+	GameManager.on_enemy_killed("boss_kkomak")  # 추가
+	GameManager.on_stage_cleared()              # 추가
+	
 	# 경험치 오브 쏟아붓기
 	if exp_orb_scene:
 		for i in exp_orbs_on_death:

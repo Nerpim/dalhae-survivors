@@ -26,6 +26,8 @@ var enemy_spawner: Node = null
 var ninja_spawner: Node = null
 
 func _ready() -> void:
+	GameManager.start_new_run()  # 추가: 새 판 시작 알림
+	
 	time_remaining = stage_duration
 	enemy_spawner = get_tree().get_first_node_in_group("enemy_spawner")
 	ninja_spawner = get_tree().get_first_node_in_group("ninja_spawner")
@@ -39,6 +41,8 @@ func _process(delta: float) -> void:
 		return
 	if boss_spawned:
 		return
+	
+	GameManager.update_playtime(delta)  # 추가
 	
 	time_remaining -= delta
 	if time_remaining < 0:

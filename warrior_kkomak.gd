@@ -90,6 +90,7 @@ func take_damage(amount: int) -> void:
 	tween.tween_property(body, "modulate", Color(1, 1, 1), 0.1)
 	
 	if current_hp <= 0:
+		GameManager.on_enemy_killed("warrior_kkomak")
 		drop_exp()
 		queue_free()
 

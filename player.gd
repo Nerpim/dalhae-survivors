@@ -132,6 +132,7 @@ func level_up_now() -> void:
 	
 	flash_level_up()
 	level_up.emit(level)
+	GameManager.on_player_level_up(level)  # 추가
 	print("레벨 업! Lv.", level)
 	
 	# 레벨업 선택지 띄우기
@@ -208,6 +209,7 @@ func _on_weapon_selected(weapon_id: String) -> void:
 
 func die() -> void:
 	died.emit()
+	GameManager.on_player_died()  # 추가
 	print("Game Over!")
 	
 	# 게임오버 화면 표시

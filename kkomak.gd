@@ -38,6 +38,7 @@ func take_damage(amount: int) -> void:
 	hp_bar.value = current_hp
 	
 	if current_hp <= 0:
+		GameManager.on_enemy_killed("kkomak")
 		drop_exp()
 		queue_free()
 

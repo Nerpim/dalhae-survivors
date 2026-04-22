@@ -80,4 +80,4 @@ func set_enemy_pool(scenes: Array[PackedScene], weights: Array[int]) -> void:
 func set_aura_chances(blue: float, gold: float) -> void:
 	blue_aura_chance = blue
 	gold_aura_chance = gold
-	print("오라 확률 변경: 파란 %.1f%%, 금색 %.1f%%" % [blue * 100, gold * 100])
+	# print("오라 확률 변경: 파란 %.1f%%, 금색 %.1f%%" % [blue * 100, gold * 100])
