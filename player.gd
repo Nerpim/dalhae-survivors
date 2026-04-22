@@ -76,6 +76,25 @@ func _physics_process(delta: float) -> void:
 	velocity = input_vector * speed
 	move_and_slide()
 	
+	# 애니메이션 전환 (방향 고려)
+	var animated_sprite = $AnimatedSprite2D
+	if input_vector.x != 0:
+		# 좌우 이동 → 옆모습
+		animated_sprite.play("walk_side")
+		animated_sprite.flip_h = input_vector.x > 0  # 오른쪽이면 좌우 반전
+	elif input_vector.y < 0:
+		# 위로 이동 → 뒷모습
+		animated_sprite.play("walk_back")
+		animated_sprite.flip_h = false
+	elif input_vector.y > 0:
+		# 아래로 이동 → 정면
+		animated_sprite.play("walk")
+		animated_sprite.flip_h = false
+	else:
+		# 정지 → idle
+		animated_sprite.play("idle")
+		animated_sprite.flip_h = false
+	
 	check_enemy_collision()
 
 func _input(event: InputEvent) -> void:
@@ -110,15 +129,15 @@ func take_damage(amount: int) -> void:
 
 func start_invincibility() -> void:
 	is_invincible = true
-	var color_rect = $ColorRect
+	var sprite = $AnimatedSprite2D
 	var tween = create_tween()
-	tween.tween_property(color_rect, "modulate:a", 0.3, 0.1)
-	tween.tween_property(color_rect, "modulate:a", 1.0, 0.1)
+	tween.tween_property(sprite, "modulate:a", 0.3, 0.1)
+	tween.tween_property(sprite, "modulate:a", 1.0, 0.1)
 	tween.set_loops(int(invincibility_time / 0.2))
 	
 	await get_tree().create_timer(invincibility_time).timeout
 	is_invincible = false
-	color_rect.modulate.a = 1.0
+	sprite.modulate.a = 1.0
 
 func gain_exp(amount: int) -> void:
 	current_exp += amount
@@ -145,10 +164,10 @@ func level_up_now() -> void:
 	show_weapon_choices()
 
 func flash_level_up() -> void:
-	var color_rect = $ColorRect
+	var sprite = $AnimatedSprite2D
 	var tween = create_tween()
-	tween.tween_property(color_rect, "modulate", Color(2, 2, 2), 0.1)
-	tween.tween_property(color_rect, "modulate", Color(1, 1, 1), 0.2)
+	tween.tween_property(sprite, "modulate", Color(2, 2, 2), 0.1)
+	tween.tween_property(sprite, "modulate", Color(1, 1, 1), 0.2)
 
 # 레벨업 시 제시할 무기 3개 선정
 func show_weapon_choices() -> void:
