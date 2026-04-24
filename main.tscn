@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dfoqtm66ct22l"]
 
+[ext_resource type="Texture2D" uid="uid://bxjs6lriaotni" path="res://sprites/map/deep_sea.png" id="1_82xsv"]
+[ext_resource type="Texture2D" uid="uid://bx4cpseffnelp" path="res://sprites/map/sea_tile.png" id="1_cegan"]
 [ext_resource type="PackedScene" uid="uid://durhryo61thy" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://dhisn7s6f1wcn" path="res://enemy_spawner.gd" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://24j0aa1fsylp" path="res://shield_kkomak.tscn" id="3_5vw27"]
@@ -20,6 +22,27 @@
 [ext_resource type="PackedScene" uid="uid://ccr6vp411nfv" path="res://boss_kkomak.tscn" id="13_vivmo"]
 
 [node name="Main" type="Node2D" unique_id=534228537]
+
+[node name="DeepSea" type="TextureRect" parent="." unique_id=1263005398]
+offset_left = -4424.0
+offset_top = -4676.0
+offset_right = 5576.0
+offset_bottom = 5324.0
+texture = ExtResource("1_82xsv")
+stretch_mode = 1
+
+[node name="ShallowSea" type="TextureRect" parent="." unique_id=875252703]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3424.0
+offset_top = -3676.0
+offset_right = 4576.0
+offset_bottom = 4324.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_cegan")
+stretch_mode = 1
 
 [node name="Player" parent="." unique_id=2032835174 instance=ExtResource("1_ig7tw")]
 position = Vector2(576, 324)

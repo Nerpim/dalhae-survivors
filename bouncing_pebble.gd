@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var speed: float = 500.0
-@export var damage: int = 8
+@export var damage: int = 15
 @export var max_bounces: int = 2  # 최대 튕김 횟수
 @export var lifetime: float = 5.0
 

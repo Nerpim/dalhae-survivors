@@ -11,7 +11,7 @@ extends Node2D
 
 # 돌진 공격 설정
 @export var dash_speed: float = 600.0
-@export var dash_cooldown: float = 1.2
+@export var dash_cooldown: float = 1.2  # Lv2용 쿨다운 (기존)
 
 # Lv3 3연타 설정
 @export var combo_retreat_distance: float = 30.0
@@ -20,6 +20,7 @@ extends Node2D
 # Lv4 헐크 돌진 설정
 @export var hulk_dash_speed: float = 900.0
 @export var hulk_dash_distance: float = 800.0
+@export var hulk_cooldown: float = 5.0  # ★ 추가: Lv4 전용 쿨다운
 
 # 해돌이끼리 밀어내기
 @export var separation_distance: float = 40.0
@@ -231,7 +232,7 @@ func behavior_hulk(delta: float) -> void:
 			
 			if global_position.distance_to(return_target) < 50:
 				current_state = State.COOLDOWN
-				await get_tree().create_timer(dash_cooldown).timeout
+				await get_tree().create_timer(hulk_cooldown).timeout  # ★ 변경: hulk_cooldown 사용
 				current_state = State.FOLLOWING
 		
 		State.COOLDOWN:

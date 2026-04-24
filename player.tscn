@@ -106,13 +106,13 @@ shape = SubResource("RectangleShape2D_sh265")
 [node name="PebbleWeapon" type="Node2D" parent="." unique_id=770834942]
 script = ExtResource("2_onrkg")
 pebble_scene = ExtResource("3_i3pqv")
+attack_range = 300.0
 
 [node name="Timer" type="Timer" parent="PebbleWeapon" unique_id=1292018301]
 wait_time = 0.8
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=75094290]
-zoom = Vector2(1.5, 1.5)
 
 [node name="OrbitingPebbleWeapon" type="Node2D" parent="." unique_id=957866907]
 script = ExtResource("4_hqtel")
